@@ -1,0 +1,40 @@
+{
+  "name": "gulp-sass-plotter",
+  "version": "0.0.1",
+  "description": "Gulp adapter for sass-plotter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "keywords": [
+    "gulp-sass-plotter",
+    "sass-plotter",
+    "gulp",
+    "gulp-sass",
+    "gulp-sass-graph",
+    "productivity",
+    "sass",
+    "sass-graph",
+    "sass-import",
+    "sass-imports",
+    "scss",
+    "scss-graph",
+    "scss-imports",
+    "sass-import-resolve"
+  ],
+  "author": "dadish <nurguly.ashyrov@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dadish/gulp-sass-plotter.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/dadish/gulp-sass-plotter/master/LICENSE"
+    }
+  ]
+}
