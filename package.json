@@ -36,5 +36,12 @@
       "type": "MIT",
       "url": "https://raw.githubusercontent.com/dadish/gulp-sass-plotter/master/LICENSE"
     }
-  ]
+  ],
+  "dependencies": {
+    "sass-plotter": "^0.1.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "mocha": "^2.2.5"
+  }
 }
