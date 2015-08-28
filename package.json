@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "Gulp adapter for sass-plotter.",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha test/"
-  },
   "keywords": [
     "gulp-sass-plotter",
     "sass-plotter",
