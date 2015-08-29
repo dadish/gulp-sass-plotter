@@ -9,18 +9,29 @@ $ npm install gulp-sass-plotter
 ```
 
 ### Usage
-Basic usage
 ```js
+var gulp    = require('gulp');
+var watch   = require('gulp-watch');
+var sass    = require('gulp-sass');
 var plotter = require('gulp-sass-plotter');
 
-gulp.watch('path/to/sass/files/')
-  .pipe(plotter(options))
-  .pipe(dest('path/to/css/dir/'));
+ gulp.src("./test/scss/**/*.scss")
+  .pipe(watch("./test/scss/**/*.scss"))
+  .pipe(plotter())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest("./css"));
+
 ```
 This will pass all the file through and also will stream all dependent files
 of the .scss files.
 
 #### options
+You can pass options into plotter like so...
+```js
+...
+.pipe(plotter(options))
+...
+```
 
 Options are those of [sass-import-resolve][import-resolve]. You could save some cpu 
 by passing ```resolveSass : false```. This will not look for files with `.sass`

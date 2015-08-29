@@ -4,6 +4,7 @@
   "description": "Gulp adapter for sass-plotter.",
   "main": "index.js",
   "keywords": [
+    "gulpplugin",
     "gulp-sass-plotter",
     "sass-plotter",
     "gulp",
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
     "gulp-watch": "^4.3.5",
     "mocha": "^2.2.5"
   }
