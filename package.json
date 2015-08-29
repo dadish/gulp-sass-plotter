@@ -35,10 +35,13 @@
     }
   ],
   "dependencies": {
-    "sass-plotter": "^0.1.8"
+    "sass-plotter": "^0.1.8",
+    "through": "^2.3.8",
+    "vinyl-file": "^1.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-watch": "^4.3.5",
     "mocha": "^2.2.5"
   }
 }
