@@ -36,7 +36,7 @@
     }
   ],
   "dependencies": {
-    "sass-plotter": "^0.1.8",
+    "sass-plotter": "^0.1.9",
     "through": "^2.3.8",
     "vinyl-file": "^1.2.1"
   },
