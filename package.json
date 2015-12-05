@@ -37,6 +37,6 @@
   ],
   "dependencies": {
     "sass-plotter": "^0.1.9",
-    "through": "^2.3.8",
+    "through": "^2.3.8"
   }
 }
