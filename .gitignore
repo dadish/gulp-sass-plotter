@@ -4,3 +4,4 @@ node_modules/
 test/
 test.js
 gulpfile.js
+npm-debug.log
