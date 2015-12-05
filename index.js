@@ -1,27 +1,37 @@
 var SassPlotter               = require('sass-plotter');
 var through                   = require('through');
 var path                      = require('path');
-var vinylFile                 = require('vinyl-file');
+var fs                        = require('fs');
 
 var plotter = new SassPlotter();
 var options = {};
 
-function write (data) {
+function write (file) {
+  var dependentFile, _this;
 
-  if (path.extname(data.path) !== '.scss') return this.queue(data);
+  _this = this;
+  
+  if (path.extname(file.path) !== '.scss' || path.extname(file.path) !== '.sass') return this.queue(file);
 
-  if (data.event === 'unlink') {
-    plotter.unset(data.path);
+  if (file.event === 'unlink') {
+    plotter.unset(file.path);
   } else {
-    plotter.set(data.path, data.contents.toString(), options);
+    plotter.set(file.path, file.contents.toString(), options);
   }
 
-  plotter.dependents(data.path).forEach(function (item) {
-    this.queue(vinylFile.readSync(item));
+  this.queue(file);
+  plotter.dependents(file.path).forEach(function (item) {
+    fs.readFile(item, {encoding : 'utf8'}, function (err, str) {
+      if (err) throw new Error(err);
+      dependentFile = file.clone();
+      dependentFile.path = item;
+      dependentFile.contents = new Buffer(str);
+      _this.queue(dependentFile);
+    });
   }, this);
 }
 
 module.exports = function (setting) {
-  options = setting;
+  options = setting || options;
   return through(write);
 }
