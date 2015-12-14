@@ -1,6 +1,6 @@
 {
   "name": "gulp-sass-plotter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Gulp adapter for sass-plotter.",
   "main": "index.js",
   "keywords": [
