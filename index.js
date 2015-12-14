@@ -19,6 +19,7 @@ function write (file) {
     plotter.unset(file.path);
   } else {
     plotter.set(file.path, file.contents.toString(), options);
+    if (file.event === undefined) return this.queue(file);
   }
 
   this.queue(file);
