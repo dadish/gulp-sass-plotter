@@ -7,11 +7,13 @@ var plotter = new SassPlotter();
 var options = {};
 
 function write (file) {
-  var dependentFile, _this;
+  var dependentFile, fileExt, _this;
 
   _this = this;
+
+  fileExt = path.extname(file.path);
   
-  if (path.extname(file.path) !== '.scss' || path.extname(file.path) !== '.sass') return this.queue(file);
+  if (fileExt !== '.scss' && fileExt !== '.sass') return this.queue(file);
 
   if (file.event === 'unlink') {
     plotter.unset(file.path);
